@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic Tac Toe - Home</title>
+    <link rel="stylesheet" href="homecss.css" />
+</head>
+
+<body>
+    <div class="home-container">
+        <h1>Welcome to Tic Tac Toe</h1>
+        <p>Ready to challenge your friend? Click below to begin!</p>
+        <!-- Changed from <a> tag to button -->
+        <button id="start-game-btn" class="start-btn">Start Game</button>
+    </div>
+
+    <script>
+        document.getElementById('start-game-btn').addEventListener('click', function() {
+            window.location.href = 'index.html'; // navigate to your game page
+        });
+    </script>
+</body>
+
+</html>

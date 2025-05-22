@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(135deg, #1a1a40, #1a2e66);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    list-style-type: none;
+}
+
+
+/* Nav Bar */
+
+nav {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    list-style-type: none;
+}
+
+nav ul {
+    list-style: none;
+}
+
+
+/* Game Layout */
+
+.gamecontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+
+/* Game Board */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    gap: 15px;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffffff33;
+    border-radius: 16px;
+    font-size: 3rem;
+    color: #00eaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 234, 255, 0.2);
+}
+
+
+/* Game Info Section */
+
+.gameinfo {
+    max-width: 300px;
+    text-align: center;
+}
+
+.gameinfo h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fffd91;
+}
+
+.info {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: block;
+    color: #ffa9f9;
+}
+
+
+/* Reset Button */
+
+#reset {
+    background: linear-gradient(135deg, #ff00cc, #3333ff);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 0, 204, 0.4);
+}
+
+#reset:hover {
+    background: linear-gradient(135deg, #3333ff, #ff00cc);
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(255, 0, 204, 0.6);
+}
+
+
+/* Winning highlight */
+
+.box.win {
+    background: linear-gradient(135deg, #00bcd4, #3f51b5);
+    /* Cyan to Indigo */
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(63, 81, 181, 0.7);
+    /* Blue glow */
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(63, 81, 181, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(0, 188, 212, 0.9);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(63, 81, 181, 0.4);
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(3, 90px);
+        grid-template-rows: repeat(3, 90px);
+    }
+    .box {
+        font-size: 2.5rem;
+    }
+    .gameinfo {
+        padding: 0 10px;
+    }
+}
